@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% block title %}About{% endblock %}
+{% block body %}
+<div class="container mt-5 pt-3 text-center">
+
+  <h1>Introduction</h1>
+    <p class="fs-5 text-start">
+          This PEP contains the index of all Python Enhancement Proposals, known as PEPs. PEP numbers are assigned by the PEP editors, and once assigned are never changed . The version control history  of the PEP texts represent their historical record.
+    </p>
+  <div class="text-start" >
+    <h1 class="text-center">What is a PEP</h1>
+    <p class="fs-5">PEP stands for Python Enhancement Proposal.  A PEP is a design
+    document providing information to the Python community, or describing
+    a new feature for Python or its processes or environment.  The PEP
+    should provide a concise technical specification of the feature and a
+    rationale for the feature.</p>
+    <p class="fs-5">We intend PEPs to be the primary mechanisms for proposing major new
+    features, for collecting community input on an issue, and for
+    documenting the design decisions that have gone into Python.  The PEP
+    author is responsible for building consensus within the community and
+    documenting dissenting opinions.</p>
+    <p class="fs-5">Because the PEPs are maintained as text files in a versioned
+    repository, their revision history is the historical record of the
+    feature proposal
+  </div>
+    <h1>PEP Types</h1>
+    <p class="fs-5">There are three kinds of PEP:</p>
+    <ol class="text-start fs-5">
+    <li>A <strong>Standards Track</strong> PEP describes a new feature or implementation
+    for Python. It may also describe an interoperability standard that will
+    be supported outside the standard library for current Python versions
+    before a subsequent PEP adds standard library support in a future
+    version.</li>
+    <li>An <strong>Informational</strong> PEP describes a Python design issue, or
+    provides general guidelines or information to the Python community,
+    but does not propose a new feature.  Informational PEPs do not
+    necessarily represent a Python community consensus or
+    recommendation, so users and implementers are free to ignore
+    Informational PEPs or follow their advice.</li>
+    <li>A <strong>Process</strong> PEP describes a process surrounding Python, or
+    proposes a change to (or an event in) a process.  Process PEPs are
+    like Standards Track PEPs but apply to areas other than the Python
+    language itself.  They may propose an implementation, but not to
+    Python's codebase; they often require community consensus; unlike
+    Informational PEPs, they are more than recommendations, and users
+    are typically not free to ignore them.  Examples include
+    procedures, guidelines, changes to the decision-making process, and
+    changes to the tools or environment used in Python development.
+    Any meta-PEP is also considered a Process PEP.</li>
+    </ol>
+</div>
+{% endblock %}

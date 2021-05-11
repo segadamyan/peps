@@ -1,0 +1,8 @@
+{% extends 'main.html' %}
+{% block title %}Error 404{% endblock %}
+{% block body %}
+<div class="container mt-5 pt-2 text-center">
+    <img   src="{{ url_for('static', filename='/images/404.gif') }}" alt="">
+    <p class="fs-3 "><b>OOPS.</b> There are no web page in <b>{{url}}</b></p>
+</div>
+{% endblock %}
