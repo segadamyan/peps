@@ -3,3 +3,4 @@ from .pepauthor import PEPAuthor
 from .status import Status
 from .author import Author
 from .pep import PEP
+from .user import User

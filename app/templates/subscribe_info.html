@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block title %}Subscribe Info{% endblock %}
+{% block body %}
+<div class="container text-center mt-5 pt-4">
+    {% if "Successful subscribed!" in msg %}
+        <img src="static/images/subscribe.gif" alt="" width="50%">
+    {% endif %}
+    {% if "Already subscribed!" in msg %}
+        <img src="static/images/subscribed.gif" alt="" width="20%">
+    {% endif %}
+    {% if "Invalid type of email, please check!" in msg %}
+        <img src="static/images/check-your-email.gif" alt="" width="60%">
+    {% endif %}
+    <h1 class="h1">{{msg}}</h1>
+</div>
+{% endblock %}

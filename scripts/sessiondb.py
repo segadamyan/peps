@@ -1,4 +1,4 @@
-from models import PEP, Status, Author
+from models import PEP, Status, Author, User
 from sqlalchemy.orm import sessionmaker
 
 
@@ -31,10 +31,23 @@ class DBSession:
                 pep_author = Author(name=author)
             current_pep.authors.append(pep_author)
 
-    def add_pep(self, pep_info: dict):
+    def add_user(self, user: User) -> bool:
+        exist_user = self.session.query(User).filter_by(mail=user.mail).first()
+        if not exist_user:
+            self.session.add(user)
+            self.session.commit()
+            return True
+        else:
+            return False
+
+    def get_users(self):
+        query = self.session.query(User)
+        return query.all()
+
+    def add_pep(self, pep_info: dict) -> bool:
         exist_pep = self.__check_existing_pep(pep_info["PEP"])
         self.__add_status(pep_info["Status"])
-
+        is_new = False
         if exist_pep:
             exist_pep.status = pep_info["Status"]
             exist_pep.title = pep_info["Title"]
@@ -50,6 +63,8 @@ class DBSession:
                 created=pep_info["Created"]
             )
             self.session.add(exist_pep)
+            is_new = True
 
         self.__add_authors(exist_pep, pep_info)
         self.session.commit()
+        return is_new
